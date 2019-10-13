@@ -5,6 +5,9 @@ from difflib import get_close_matches
 data = json.load(open("data/data.json"))
 
 def translate(key):
+    if key in data:
+        return data[key]
+    
     lc_key = key.lower()
 
     if lc_key in data:
